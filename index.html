@@ -160,7 +160,7 @@
           <a href="#pricing">Preise</a>
           <a href="#faq">FAQ</a>
         </div>
-        <a class="btn" href="#kontakt">Zugang anfragen</a>
+        <a class="btn" href="#termin">Gespräch buchen</a>
       </nav>
     </div>
   </header>
@@ -174,7 +174,7 @@
           <p class="lead">DealFlow Schweiz verbindet Investoren, Private Equity, Unternehmer und kapitalseitige Partner mit relevanten KMU-Transaktionen, Nachfolgelösungen und Kapitalanfragen in der Schweiz.</p>
           <div class="hero-actions">
             <a href="#pricing" class="btn">Mitgliedschaft ansehen</a>
-            <a href="#kontakt" class="btn secondary">Deal einreichen</a>
+            <a href="#termin" class="btn secondary">Deal besprechen</a>
           </div>
           <div class="trust">
             <span><i class="dot"></i> Diskrete Vorqualifikation</span>
@@ -279,6 +279,7 @@
               <li>Newsletter & Marktupdates</li>
             </ul>
             <br><button class="btn secondary" onclick="openPayment('Starter', 'CHF 99 / Monat', 'https://buy.stripe.com/6oU9ASgIhek1awD53edUY00')">Mit Starter starten</button>
+            <a class="btn secondary" href="#termin" style="margin-top:10px; width:100%">Vorher Gespräch buchen</a>
           </div>
           <div class="price-card featured">
             <div class="label">Empfohlen</div>
@@ -293,6 +294,7 @@
               <li>Quartalsweise Suchprofil-Abstimmung</li>
             </ul>
             <br><button class="btn" onclick="openPayment('Investor', 'CHF 249 / Monat', 'https://buy.stripe.com/fZu8wO1Nnfo548f8fqdUY01')">Investor-Zugang kaufen</button>
+            <a class="btn secondary" href="#termin" style="margin-top:10px; width:100%">Erstgespräch buchen</a>
           </div>
           <div class="price-card">
             <h3>Professional</h3>
@@ -306,36 +308,22 @@
               <li>Monatlicher Dealflow Call</li>
             </ul>
             <br><button class="btn secondary" onclick="openPayment('Professional', 'CHF 499 / Monat', 'https://buy.stripe.com/7sY8wO9fPcbT0W3gLWdUY02')">Professional kaufen</button>
+            <a class="btn secondary" href="#termin" style="margin-top:10px; width:100%">Professional Call buchen</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section>
+    <section id="termin">
       <div class="container">
-        <div class="cta" id="kontakt">
+        <div class="cta">
           <div>
-            <h2>Deal einreichen oder Zugang beantragen.</h2>
-            <p class="lead">Ob du ein Unternehmen verkaufen möchtest, Kapital suchst oder als Investor Zugang zu Schweizer KMU-Deals willst: Der erste Schritt ist eine kurze, vertrauliche Anfrage.</p>
+            <h2>Vertrauliches Erstgespräch buchen.</h2>
+            <p class="lead">Ob Investor, Unternehmer, Family Office oder kapitalseitiger Partner: Buche direkt einen Termin, um DealFlow Schweiz, passende Opportunitäten oder eine mögliche Zusammenarbeit diskret zu besprechen.</p>
             <p style="color:var(--muted)">Hinweis: DealFlow Schweiz ersetzt keine rechtliche, steuerliche oder finanzielle Beratung. Transaktionen erfolgen nur nach separater Prüfung, Freigabe und individueller Vereinbarung.</p>
+            <a class="btn" href="https://calendly.com/moritz-lengacher/30min" target="_blank" rel="noopener">Calendly extern öffnen</a>
           </div>
-          <form class="form" action="https://formsubmit.co/Moritz@lengacher-partner.ch" method="POST">
-            <input type="hidden" name="_subject" value="Neue DealFlow Schweiz Anfrage">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input name="name" placeholder="Name" required>
-            <input name="email" type="email" placeholder="E-Mail" required>
-            <select name="rolle" required>
-              <option value="">Ich bin...</option>
-              <option>Investor / Käufer</option>
-              <option>Private Equity / Family Office</option>
-              <option>Unternehmer / Verkäufer</option>
-              <option>Kapitalsuchend</option>
-              <option>M&A / Berater</option>
-            </select>
-            <textarea name="nachricht" placeholder="Kurz beschreiben: Was suchst du oder welche Situation liegt vor?"></textarea>
-            <button class="btn" type="submit" style="width:100%">Vertrauliche Anfrage senden</button>
-          </form>
+          <div class="calendly-inline-widget" data-url="https://calendly.com/moritz-lengacher/30min" style="min-width:320px;height:620px;border-radius:24px;overflow:hidden;background:#ffffff;"></div>
         </div>
       </div>
     </section>
@@ -403,5 +391,6 @@
       </div>
     </div>
   </footer>
+  <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 </body>
 </html>
