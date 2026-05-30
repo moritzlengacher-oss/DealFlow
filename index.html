@@ -130,6 +130,13 @@
       font-size: 14px;
     }
     footer { padding: 38px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+    .payment-modal { position: fixed; inset: 0; background: rgba(0,0,0,.68); display: none; align-items: center; justify-content: center; z-index: 999; padding: 20px; }
+    .payment-box { width: min(520px, 100%); background: #0b1627; border: 1px solid var(--line); border-radius: 30px; padding: 30px; box-shadow: var(--shadow); }
+    .payment-box h3 { font-size: 30px; margin-bottom: 8px; }
+    .payment-price { color: var(--gold2); font-size: 24px; font-weight: 900; margin: 12px 0 18px; }
+    .payment-note { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+    .payment-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .close-btn { background: transparent; border: 1px solid var(--line); color: var(--white); padding: 13px 20px; border-radius: 999px; cursor: pointer; font-weight: 750; }
     .footer-grid { display:flex; justify-content:space-between; gap: 20px; flex-wrap:wrap; }
 
     @media (max-width: 880px) {
@@ -270,7 +277,7 @@
               <li>Einreichung von Suchprofilen</li>
               <li>Newsletter & Marktupdates</li>
             </ul>
-            <br><a class="btn secondary" href="#kontakt">Anfragen</a>
+            <br><button class="btn secondary" onclick="openPayment('Starter', 'CHF 99 / Monat', 'https://buy.stripe.com/STARTER_LINK_ERSETZEN')">Mit Starter starten</button>
           </div>
           <div class="price-card featured">
             <div class="label">Empfohlen</div>
@@ -284,7 +291,7 @@
               <li>Direkte Einleitung nach Freigabe</li>
               <li>Quartalsweise Suchprofil-Abstimmung</li>
             </ul>
-            <br><a class="btn" href="#kontakt">Zugang anfragen</a>
+            <br><button class="btn" onclick="openPayment('Investor', 'CHF 249 / Monat', 'https://buy.stripe.com/INVESTOR_LINK_ERSETZEN')">Investor-Zugang kaufen</button>
           </div>
           <div class="price-card">
             <h3>Professional</h3>
@@ -297,7 +304,7 @@
               <li>Direkte Unternehmeransprache nach Absprache</li>
               <li>Monatlicher Dealflow Call</li>
             </ul>
-            <br><a class="btn secondary" href="#kontakt">Professional anfragen</a>
+            <br><button class="btn secondary" onclick="openPayment('Professional', 'CHF 499 / Monat', 'https://buy.stripe.com/PROFESSIONAL_LINK_ERSETZEN')">Professional kaufen</button>
           </div>
         </div>
       </div>
@@ -342,6 +349,37 @@
       </div>
     </section>
   </main>
+
+  <div class="payment-modal" id="paymentModal">
+    <div class="payment-box">
+      <h3 id="paymentPlan">Mitgliedschaft</h3>
+      <div class="payment-price" id="paymentPrice">CHF 0 / Monat</div>
+      <p class="payment-note">
+        Du wirst im nächsten Schritt zu einem sicheren Zahlungsfenster weitergeleitet, wo Kreditkarte, Apple Pay oder weitere Zahlungsmethoden hinterlegt werden können. Die Kreditkartendaten werden nicht auf dieser Website gespeichert.
+      </p>
+      <div class="payment-actions">
+        <a class="btn" id="paymentLink" href="#" target="_blank" rel="noopener">Sicher bezahlen</a>
+        <button class="close-btn" onclick="closePayment()">Abbrechen</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openPayment(plan, price, link) {
+      document.getElementById('paymentPlan').textContent = plan + ' Mitgliedschaft';
+      document.getElementById('paymentPrice').textContent = price;
+      document.getElementById('paymentLink').href = link;
+      document.getElementById('paymentModal').style.display = 'flex';
+    }
+
+    function closePayment() {
+      document.getElementById('paymentModal').style.display = 'none';
+    }
+
+    document.getElementById('paymentModal').addEventListener('click', function(event) {
+      if (event.target === this) closePayment();
+    });
+  </script>
 
   <div class="footer-trust">
     Für Investoren, Private Equity, Family Offices und Unternehmer in der Schweiz.
