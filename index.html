@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DealFlow Schweiz | Off-Market Unternehmensdeals, Nachfolge & Kapital</title>
+  <meta name="description" content="DealFlow Schweiz verbindet Investoren, Private Equity, Unternehmer und Nachfolgelösungen diskret mit geprüften Off-Market Unternehmensdeals in der Schweiz." />
+  <meta name="keywords" content="Unternehmensverkauf Schweiz, Nachfolgelösung Schweiz, Off-Market Deals Schweiz, Private Equity Schweiz, Investoren Schweiz, Kapitalbedarf KMU, Firmen kaufen Schweiz, M&A Schweiz" />
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg2: #0d1b2f;
+      --card: rgba(255,255,255,0.075);
+      --card2: rgba(255,255,255,0.11);
+      --gold: #d7b56d;
+      --gold2: #f2d58a;
+      --text: #f5f7fb;
+      --muted: #b7c0cf;
+      --line: rgba(255,255,255,0.14);
+      --white: #ffffff;
+      --green: #5ee0a0;
+      --shadow: 0 24px 80px rgba(0,0,0,.35);
+      --radius: 26px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top right, rgba(215,181,109,.2), transparent 34%), linear-gradient(180deg, var(--bg), #050910 78%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1160px, calc(100% - 40px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: rgba(7,17,31,.72);
+      border-bottom: 1px solid var(--line);
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.03em; }
+    .logo {
+      width: 42px; height: 42px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--gold), #8e6a24);
+      display: grid; place-items: center; color: #07111f; font-weight: 900;
+      box-shadow: 0 12px 30px rgba(215,181,109,.22);
+    }
+    .navlinks { display: flex; gap: 26px; color: var(--muted); font-size: 14px; }
+    .navlinks a:hover { color: var(--white); }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 13px 20px; border-radius: 999px; font-weight: 750;
+      background: linear-gradient(135deg, var(--gold2), var(--gold)); color: #09111d;
+      box-shadow: 0 14px 40px rgba(215,181,109,.22);
+      border: 0; cursor: pointer;
+    }
+    .btn.secondary { background: transparent; color: var(--white); border: 1px solid var(--line); box-shadow: none; }
+
+    .hero { padding: 92px 0 72px; position: relative; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 54px; align-items: center; }
+    .eyebrow { display: inline-flex; gap: 8px; align-items: center; color: var(--gold2); background: rgba(215,181,109,.12); border: 1px solid rgba(215,181,109,.25); padding: 8px 13px; border-radius: 999px; font-size: 13px; font-weight: 700; }
+    h1 { font-size: clamp(42px, 6vw, 76px); line-height: .97; letter-spacing: -.07em; margin: 22px 0; }
+    .lead { font-size: 20px; color: var(--muted); max-width: 650px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px; }
+    .trust { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 34px; color: var(--muted); font-size: 14px; }
+    .trust span { display: flex; gap: 8px; align-items: center; }
+    .dot { width: 8px; height: 8px; background: var(--green); border-radius: 999px; }
+
+    .deal-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.055));
+      border: 1px solid var(--line); border-radius: var(--radius); padding: 26px;
+      box-shadow: var(--shadow); position: relative; overflow: hidden;
+    }
+    .deal-card:before { content: ""; position: absolute; inset: -80px -80px auto auto; width: 220px; height: 220px; border-radius: 50%; background: rgba(215,181,109,.16); filter: blur(10px); }
+    .deal-top { display: flex; justify-content: space-between; gap: 16px; align-items: start; position: relative; }
+    .badge { padding: 7px 11px; border-radius: 999px; background: rgba(94,224,160,.13); color: #8ff0be; font-size: 12px; font-weight: 800; }
+    .deal-title { font-size: 23px; font-weight: 850; letter-spacing: -.03em; margin: 18px 0 8px; }
+    .deal-meta { color: var(--muted); font-size: 14px; }
+    .metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+    .metric { padding: 18px; border-radius: 18px; background: rgba(255,255,255,.07); border: 1px solid var(--line); }
+    .metric strong { display:block; font-size: 22px; color: var(--white); }
+    .metric small { color: var(--muted); }
+    .blurred { margin-top: 18px; padding: 18px; border-radius: 18px; background: rgba(255,255,255,.055); border: 1px dashed rgba(255,255,255,.22); color: var(--muted); }
+
+    section { padding: 82px 0; }
+    .section-head { max-width: 780px; margin-bottom: 34px; }
+    h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1.05; letter-spacing: -.055em; margin: 0 0 16px; }
+    .section-head p { color: var(--muted); font-size: 18px; margin: 0; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+    .card:hover { background: var(--card2); transform: translateY(-2px); transition: .2s ease; }
+    .icon { width: 48px; height: 48px; border-radius: 16px; display: grid; place-items: center; background: rgba(215,181,109,.13); color: var(--gold2); font-size: 22px; margin-bottom: 18px; }
+    h3 { font-size: 22px; letter-spacing: -.035em; margin: 0 0 10px; }
+    .card p, .card li { color: var(--muted); }
+    ul { padding-left: 18px; margin: 14px 0 0; }
+
+    .process { counter-reset: step; }
+    .step { display: grid; grid-template-columns: 68px 1fr; gap: 18px; align-items: start; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: rgba(255,255,255,.06); }
+    .num { width: 52px; height: 52px; border-radius: 18px; background: linear-gradient(135deg, var(--gold2), var(--gold)); color: #07111f; display: grid; place-items: center; font-weight: 900; }
+
+    .pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
+    .price-card { padding: 30px; border-radius: 30px; border: 1px solid var(--line); background: rgba(255,255,255,.075); position: relative; }
+    .price-card.featured { background: linear-gradient(180deg, rgba(215,181,109,.18), rgba(255,255,255,.075)); border-color: rgba(215,181,109,.42); box-shadow: var(--shadow); transform: scale(1.025); }
+    .price { font-size: 42px; font-weight: 900; letter-spacing: -.06em; margin: 12px 0; }
+    .price span { font-size: 15px; color: var(--muted); font-weight: 600; letter-spacing: 0; }
+    .label { position: absolute; top: 18px; right: 18px; font-size: 12px; color: #07111f; background: var(--gold2); padding: 6px 10px; border-radius: 999px; font-weight: 900; }
+
+    .cta { background: linear-gradient(135deg, rgba(215,181,109,.22), rgba(255,255,255,.06)); border: 1px solid rgba(215,181,109,.32); border-radius: 34px; padding: 42px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 26px; align-items: center; }
+    .form { background: rgba(5,9,16,.52); border: 1px solid var(--line); border-radius: 26px; padding: 22px; }
+    input, select, textarea { width: 100%; margin-bottom: 12px; padding: 14px 15px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255,255,255,.07); color: var(--white); outline: 0; }
+    textarea { min-height: 110px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: #8d98aa; }
+    select { color: var(--white); }
+
+    .faq details { background: rgba(255,255,255,.065); border: 1px solid var(--line); border-radius: 20px; padding: 20px 22px; margin-bottom: 12px; }
+    .faq summary { cursor: pointer; font-weight: 800; }
+    .faq p { color: var(--muted); margin-bottom: 0; }
+        .footer-trust {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 20px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    footer { padding: 38px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+    .footer-grid { display:flex; justify-content:space-between; gap: 20px; flex-wrap:wrap; }
+
+    @media (max-width: 880px) {
+      .hero-grid, .grid-3, .grid-2, .pricing, .cta { grid-template-columns: 1fr; }
+      .navlinks { display: none; }
+      h1 { font-size: 44px; }
+      .price-card.featured { transform: none; }
+      .hero { padding-top: 58px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top"><span class="logo">DF</span><span>DealFlow Schweiz</span></a>
+        <div class="navlinks">
+          <a href="#deals">Deals</a>
+          <a href="#prozess">Ablauf</a>
+          <a href="#pricing">Preise</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <a class="btn" href="#kontakt">Zugang anfragen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Diskreter Zugang zu Schweizer Unternehmensdeals</div>
+          <h1>Off-Market Deals. Nachfolge. Kapital. Alles an einem Ort.</h1>
+          <p class="lead">DealFlow Schweiz verbindet Investoren, Private Equity, Unternehmer und kapitalseitige Partner mit relevanten KMU-Transaktionen, Nachfolgelösungen und Kapitalanfragen in der Schweiz.</p>
+          <div class="hero-actions">
+            <a href="#pricing" class="btn">Mitgliedschaft ansehen</a>
+            <a href="#kontakt" class="btn secondary">Deal einreichen</a>
+          </div>
+          <div class="trust">
+            <span><i class="dot"></i> Diskrete Vorqualifikation</span>
+            <span><i class="dot"></i> Schweizer KMU-Fokus</span>
+            <span><i class="dot"></i> Investoren & Unternehmer</span>
+          </div>
+        </div>
+
+        <div class="deal-card">
+          <div class="deal-top">
+            <div>
+              <div class="badge">Beispiel Deal Preview</div>
+              <div class="deal-title">Nachfolgelösung für profitables B2B-Dienstleistungsunternehmen</div>
+              <div class="deal-meta">Region: Deutschschweiz · Branche: Services · Status: vertraulich</div>
+            </div>
+          </div>
+          <div class="metrics">
+            <div class="metric"><strong>CHF 2.8M</strong><small>Umsatz p.a.</small></div>
+            <div class="metric"><strong>14%</strong><small>EBITDA-Marge</small></div>
+            <div class="metric"><strong>20+</strong><small>Jahre am Markt</small></div>
+            <div class="metric"><strong>100%</strong><small>Nachfolge offen</small></div>
+          </div>
+          <div class="blurred">Detaildaten, Verkäuferkontakt und Unterlagen werden erst nach Freigabe, NDA und Interessentenprüfung geteilt.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="deals">
+      <div class="container">
+        <div class="section-head">
+          <h2>Vier Deal-Kategorien für den Schweizer Mittelstand.</h2>
+          <p>DealFlow Schweiz ist kein Massenportal. Der Fokus liegt auf relevanten Opportunitäten, diskreter Vermittlung und klarer Vorqualifikation.</p>
+        </div>
+        <div class="grid-4 grid-3">
+          <div class="card"><div class="icon">🏢</div><h3>Unternehmensverkäufe</h3><p>KMU-Inhaber, die einen Teilverkauf, vollständigen Exit oder strategischen Käufer suchen.</p></div>
+          <div class="card"><div class="icon">🤝</div><h3>Nachfolgelösungen</h3><p>Unternehmen mit stabiler Substanz, aber fehlender interner Nachfolge oder Wachstumsnachfolger.</p></div>
+          <div class="card"><div class="icon">🔒</div><h3>Off-Market Deals</h3><p>Diskrete Transaktionen, die nicht öffentlich ausgeschrieben werden und nur qualifizierten Mitgliedern zugänglich sind.</p></div>
+          <div class="card"><div class="icon">💰</div><h3>Kapitalbedarf</h3><p>Unternehmer mit Bedarf an Wachstumskapital, Bridge-Finanzierung, Beteiligungskapital oder strategischen Partnern.</p></div>
+          <div class="card"><div class="icon">📈</div><h3>Buy-Side Mandate</h3><p>Investoren und Unternehmer, die gezielt Firmen in bestimmten Branchen, Regionen oder Umsatzgrössen suchen.</p></div>
+          <div class="card"><div class="icon">🧭</div><h3>Deal Sourcing</h3><p>Strukturierter Zugang zu potenziellen Targets über Netzwerk, direkte Ansprache und diskrete Vorabklärung.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container grid-2">
+        <div class="card">
+          <div class="icon">👤</div>
+          <h2>Für Investoren & Private Equity</h2>
+          <p>Erhalte Zugang zu geprüften Deal-Previews, Nachfolgesituationen und Kapitalanfragen aus dem Schweizer KMU-Markt.</p>
+          <ul>
+            <li>Deal-Previews mit Branche, Region, Umsatz, Ergebnis und Status</li>
+            <li>Qualifizierte Unternehmergespräche statt kalte Listen</li>
+            <li>Filter nach Branche, Ticketgrösse, Region und Käuferprofil</li>
+            <li>Diskrete Weiterleitung nach NDA und Freigabe</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">🏦</div>
+          <h2>Für Unternehmer</h2>
+          <p>Finde passende Investoren, Käufer, Nachfolger oder Kapitalpartner, ohne dein Unternehmen öffentlich auf den Markt zu stellen.</p>
+          <ul>
+            <li>Diskrete Erstprüfung deiner Situation</li>
+            <li>Anonyme Deal-Darstellung gegenüber geprüften Interessenten</li>
+            <li>Zugang zu Investoren, Unternehmern und strategischen Käufern</li>
+            <li>Begleitung bis zur ersten qualifizierten Einleitung</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="prozess">
+      <div class="container">
+        <div class="section-head">
+          <h2>So funktioniert DealFlow Schweiz.</h2>
+          <p>Ein klarer Prozess schafft Vertrauen auf beiden Seiten: Verkäufer, Unternehmer, Investoren und Kapitalgeber.</p>
+        </div>
+        <div class="grid-2 process">
+          <div class="step"><div class="num">1</div><div><h3>Profil & Interessen</h3><p>Mitglieder geben an, welche Branchen, Grössen, Regionen und Dealarten relevant sind.</p></div></div>
+          <div class="step"><div class="num">2</div><div><h3>Deal-Preview</h3><p>Passende Opportunitäten werden anonymisiert und strukturiert vorgestellt.</p></div></div>
+          <div class="step"><div class="num">3</div><div><h3>Prüfung & NDA</h3><p>Bei Interesse erfolgt eine Vorprüfung, NDA und Freigabe durch die jeweilige Gegenseite.</p></div></div>
+          <div class="step"><div class="num">4</div><div><h3>Direkte Einleitung</h3><p>Erst danach werden Kontakte, Unterlagen oder konkrete Gespräche freigegeben.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <h2>Mitgliedschaften ab CHF 99 pro Monat.</h2>
+          <p>Für unterschiedliche Käuferprofile, Investoren und Unternehmer. Jeder Zugang wird manuell geprüft.</p>
+        </div>
+        <div class="pricing">
+          <div class="price-card">
+            <h3>Starter</h3>
+            <p>Für Unternehmer, Suchende und kleinere Investoren.</p>
+            <div class="price">CHF 99 <span>/ Monat</span></div>
+            <ul>
+              <li>Monatliche Deal-Previews</li>
+              <li>Basis-Zugang zu anonymisierten Opportunitäten</li>
+              <li>Einreichung von Suchprofilen</li>
+              <li>Newsletter & Marktupdates</li>
+            </ul>
+            <br><a class="btn secondary" href="#kontakt">Anfragen</a>
+          </div>
+          <div class="price-card featured">
+            <div class="label">Empfohlen</div>
+            <h3>Investor</h3>
+            <p>Für aktive Käufer, Family Offices und Beteiligungspartner.</p>
+            <div class="price">CHF 249 <span>/ Monat</span></div>
+            <ul>
+              <li>Priorisierter Deal-Zugang</li>
+              <li>Filter nach Branche, Region und Dealgrösse</li>
+              <li>NDA-Prozess für passende Deals</li>
+              <li>Direkte Einleitung nach Freigabe</li>
+              <li>Quartalsweise Suchprofil-Abstimmung</li>
+            </ul>
+            <br><a class="btn" href="#kontakt">Zugang anfragen</a>
+          </div>
+          <div class="price-card">
+            <h3>Professional</h3>
+            <p>Für Private Equity, M&A-Berater und aktive Buy-Side Mandate.</p>
+            <div class="price">CHF 499 <span>/ Monat</span></div>
+            <ul>
+              <li>Individuelles Deal Sourcing</li>
+              <li>Buy-Side Suchmandat Light</li>
+              <li>Priorität bei passenden Targets</li>
+              <li>Direkte Unternehmeransprache nach Absprache</li>
+              <li>Monatlicher Dealflow Call</li>
+            </ul>
+            <br><a class="btn secondary" href="#kontakt">Professional anfragen</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="cta" id="kontakt">
+          <div>
+            <h2>Deal einreichen oder Zugang beantragen.</h2>
+            <p class="lead">Ob du ein Unternehmen verkaufen möchtest, Kapital suchst oder als Investor Zugang zu Schweizer KMU-Deals willst: Der erste Schritt ist eine kurze, vertrauliche Anfrage.</p>
+            <p style="color:var(--muted)">Hinweis: DealFlow Schweiz ersetzt keine rechtliche, steuerliche oder finanzielle Beratung. Transaktionen erfolgen nur nach separater Prüfung, Freigabe und individueller Vereinbarung.</p>
+          </div>
+          <form class="form" action="mailto:Moritz@lengacher-partner.ch" method="post" enctype="text/plain">
+            <input name="name" placeholder="Name" required>
+            <input name="email" type="email" placeholder="E-Mail" required>
+            <select name="rolle" required>
+              <option value="">Ich bin...</option>
+              <option>Investor / Käufer</option>
+              <option>Private Equity / Family Office</option>
+              <option>Unternehmer / Verkäufer</option>
+              <option>Kapitalsuchend</option>
+              <option>M&A / Berater</option>
+            </select>
+            <textarea name="nachricht" placeholder="Kurz beschreiben: Was suchst du oder welche Situation liegt vor?"></textarea>
+            <button class="btn" type="submit" style="width:100%">Vertrauliche Anfrage senden</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="faq">
+      <div class="container">
+        <div class="section-head">
+          <h2>Häufige Fragen.</h2>
+        </div>
+        <details><summary>Wer bekommt Zugang zu DealFlow Schweiz?</summary><p>Der Zugang ist für Investoren, Unternehmer, Private Equity, Family Offices, aktive Käufer und ausgewählte Berater gedacht. Jede Anfrage wird manuell geprüft.</p></details>
+        <details><summary>Sind die Deals öffentlich sichtbar?</summary><p>Nein. Deal-Informationen werden anonymisiert und stufenweise geteilt. Konkrete Unterlagen oder Kontakte gibt es erst nach Freigabe und NDA.</p></details>
+        <details><summary>Kann ich mein Unternehmen diskret einreichen?</summary><p>Ja. Die Erstprüfung kann vertraulich erfolgen. Auf Wunsch wird das Unternehmen nur anonymisiert als Deal-Preview vorgestellt.</p></details>
+        <details><summary>Gibt es eine Erfolgsprovision?</summary><p>Die Mitgliedschaft deckt den Zugang und die Vorqualifikation ab. Erfolgsbasierte oder mandatsspezifische Gebühren können separat vereinbart werden.</p></details>
+        <details><summary>Welche Branchen sind relevant?</summary><p>Besonders interessant sind profitable Schweizer KMU aus Dienstleistungen, Bau, Handwerk, IT, Industrie, Energie, Healthcare, Immobilien-nahen Services und B2B-Nischen.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-trust">
+    Für Investoren, Private Equity, Family Offices und Unternehmer in der Schweiz.
+  </div>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <strong style="color:var(--white)">DealFlow Schweiz</strong><br>
+        Off-Market Deals · Nachfolgelösungen · Kapitalbedarf
+      </div>
+
+      <div>
+        DealFlow Schweiz ist ein Produkt der Lengacher &amp; Partner GmbH.<br>
+        Kontakt: Moritz@lengacher-partner.ch<br>
+        © 2026 Alle Rechte vorbehalten.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
